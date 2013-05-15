@@ -12,13 +12,17 @@
 //cool
 //really cool
 //awesome
-Raven.config('http://50dbe04cd1224d439e9c49bf1d0464df@localhost:8000/1').install();
+Raven.config('https://7c9decc50ca54bce88f5d9185b8e452e@app.getsentry.com/8442').install();
 
 Raven.setUser({
-    email: 'matt@ydekproductions.com',
-    id: 5
+    email: 'parhamfh@kth.se'
 })
 
+try{
+    throw new Error("Testing Error Handling!")
+} catch(e){
+    Raven.captureException(e); //log exception
+}
 
 </script>
 <body>
